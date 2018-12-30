@@ -1,5 +1,13 @@
 import re
 
+"""
+
+Temple: Groups
+    Stores the group class and any other
+    related classes
+
+"""
+
 class Group:
     """
     Group class:

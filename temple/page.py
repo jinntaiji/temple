@@ -1,5 +1,12 @@
 import re
 
+"""
+
+Temple: Page
+    Stores the page classes
+
+"""
+
 class Page:
     """
     Page class:
