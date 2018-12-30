@@ -1,6 +1,12 @@
 import re
 
 class Page:
+    """
+    Page class:
+        A standard class used for pages. Stores the pages'
+        information in the value dict and includes function
+        for parsing template.
+    """
     def __init__(self, values, template):
         self.values = {
             'template': open("app/templates/{}.html".format(template), 'r').read()
@@ -21,6 +27,13 @@ class Page:
 
 
 class Post(Page):
+    """
+    Specific Post Class:
+        A specific class used for posts. Includes a basic
+        markdown parser and the ID (address) of each
+        post. Each post should be stored in a custom group
+        in order to be repeated.
+    """
     def __init__(self, values, template, markdown):
         super().__init__(values, template)
         self.markdown = list(filter(None, open("app/posts/{}".format(markdown)).read().split("\n")))

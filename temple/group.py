@@ -1,6 +1,12 @@
 import re
 
 class Group:
+    """
+    Group class:
+        Used for storing groups of pages
+        Takes in the global variables and the template
+        Pages can be added directly
+    """
     def __init__(self, values, template):
         self.values = {
             'template': open("app/templates/{}.html".format(template)).read()
@@ -15,6 +21,10 @@ class Group:
         self.pages.append(page)
 
     def to_html(self):
+        """
+        Standard templating - replaces the template
+        variables provided with global values.
+        """
         for page in self.pages:
             self.temp = self.values['template']
             for var in self.vars:
